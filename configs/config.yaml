@@ -1,0 +1,45 @@
+train:
+  input:
+    name: "dmvr"  # or any other dataset name
+    num_frames: 32
+    frame_size: 224
+    video_stride: 1
+    raw_audio: true
+    stft_length: 2048
+    stft_step: 512
+    mel_bins: 80
+    zero_centering_image: true
+    max_num_words: 16
+    max_context_sentences: 3
+    space_to_depth: false
+    linearize_vision: false
+    min_resize: 256
+    min_area_ratio: 0.08
+    max_area_ratio: 1.0
+    min_aspect_ratio: 0.75
+    max_aspect_ratio: 1.33
+    crop_resize_style: "VGG"
+    scale_jitter: true
+    audio_noise: 0.05
+    audio_mixup: true
+    mixup_alpha: 0.8
+    mixup_beta: 0.8
+    data_path: 'C:/dmvr/examples/dataset_dmvr'  # Add this line for DMVR
+
+eval:
+  input:
+    name: "dmvr"  # or any other dataset name
+    num_frames: 32
+    frame_size: 224
+    video_stride: 1
+    raw_audio: true
+    stft_length: 2048
+    stft_step: 512
+    mel_bins: 80
+    zero_centering_image: true
+    max_num_words: 16
+    max_context_sentences: 3
+    space_to_depth: false
+    linearize_vision: false
+    min_resize: 256
+    data_path: 'C:/dmvr/examples/dataset_dmvr'  # Add this line for DMVR evaluation
